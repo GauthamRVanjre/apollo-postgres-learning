@@ -8,11 +8,16 @@ export const typeDefs = gql`
 
   type Mutation {
     "Mutation to add a new User"
-    addUser: [User!]!
+    addUser(input: UserDetails): [User!]!
   }
 
   type User {
     id: ID!
+    name: String!
+    email: String!
+  }
+
+  input UserDetails {
     name: String!
     email: String!
   }
